@@ -1,0 +1,27 @@
+# This file contains the necessary information to generate the
+# grid with which the functions in this directory were calculated,
+# except for the geometry of the system.
+*** mesh_dump ***
+np=                        201
+np_part=                   209
+np_global=                 201
+np_part_global=            209
+*** index_dump ***
+is_hypercube=       F
+dim=                                    1
+nr(1, :)=               -104
+nr(2, :)=                104
+l(:)=                    201
+enlarge(:)=                4
+algorithm=                              1
+checksum=                          678350
+*** simul_box_dump ***
+box_shape=             1
+dim=                   1
+periodic_dim=          0
+transport_dim=         0
+rsize=                0.10000000000000E+02
+lsize=                0.10000000000000E+02
+box_offset=           0.00000000000000E+00
+mr_flag=                  F
+rlattice(1)=           0.10000000000000E+01

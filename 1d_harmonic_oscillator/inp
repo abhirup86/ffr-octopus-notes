@@ -1,0 +1,21 @@
+CalculationMode = gs
+
+Dimensions = 1
+TheoryLevel = independent_particles
+
+radius = 10
+spacing = 0.1
+
+% Species
+  'X' | species_user_defined | potential_formula | "0.5*x^2" | valence | 2
+%
+
+% Coordinates
+  'X' | 0
+%
+
+ExtraStates = 4
+
+Output = wfs
+OutputFormat = axis_x
+OutputWfsNumber = "1-5"

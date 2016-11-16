@@ -1,4 +1,4 @@
-*/exec/*
-*/restart/*
-*/static/*
-*/output_iter/*
+exec/
+restart/
+static/
+output_iter/

@@ -1,0 +1,11 @@
+CalculationMode = go
+Units = eV_Angstrom
+
+radius = 9.0
+spacing = 0.3
+
+XYZCoordinates = "inp.xyz"
+
+GOMethod = cg_bfgs
+GOTolerance = 0.05
+

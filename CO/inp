@@ -1,0 +1,14 @@
+CalculationMode = go
+Units = eV_Angstrom
+
+Spacing = 0.15
+
+Output = wfs
+OutputFormat = xcrysden
+
+XYZCoordinates = "STRUCT.xyz"
+
+# Do not rely on this criterion when doing geometry optimization
+GOTolerance = -1
+
+GOMinimumMove = 1e-6

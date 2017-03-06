@@ -1,0 +1,13 @@
+CalculationMode = go
+Units = eV_Angstrom
+
+Spacing = 0.15
+
+Output = wfs
+OutputFormat = xcrysden
+
+ExperimentalFeatures = yes
+PseudopotentialSet = sg15
+
+XYZCoordinates = "STRUCT.xyz"
+

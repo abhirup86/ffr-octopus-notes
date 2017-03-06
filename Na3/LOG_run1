@@ -1,0 +1,1233 @@
+    <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+                                ___
+                             .-'   `'.
+                            /         \
+                            |         ;
+                            |         |           ___.--,
+                   _.._     |0) ~ (0) |    _.---'`__.-( (_.
+            __.--'`_.. '.__.\    '--. \_.-' ,.--'`     `""`
+           ( ,.--'`   ',__ /./;   ;, '.__.'`    __
+           _`) )  .---.__.' / |   |\   \__..--""  """--.,_
+          `---' .'.''-._.-'`_./  /\ '.  \ _.-~~~````~~~-._`-.__.'
+                | |  .' _.-' |  |  \  \  '.               `~---`
+                 \ \/ .'     \  \   '. '-._)
+                  \/ /        \  \    `=.__`~-.
+             jgs  / /\         `) )    / / `"".`\
+            , _.-'.'\ \        / /    ( (     / /
+             `--~`   ) )    .-'.'      '.'.  | (
+                    (/`    ( (`          ) )  '-;
+                     `      '-;         (-'
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2, or (at your option)
+    any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+
+    <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+                           Running octopus
+
+Version                : 6.0
+Revision               : 15605
+Build time             : Fri Nov 11 03:08:56 WIB 2016
+Configuration options  : max-dim=3 sse2
+Optional libraries     : arpack netcdf newuoa
+Architecture           : x86_64
+C compiler             : gcc
+C compiler flags       : -g -O2
+Fortran compiler       : gfortran (GCC version 5.4.0 20160609)
+Fortran compiler flags : -pipe -O3 -funroll-loops -ffast-math -ffree-line-length-none
+
+           The octopus is swimming in efefer-X301A (Linux)
+
+
+            Calculation started on 2016/11/19 at 01:08:35
+
+
+************************** Calculation Mode **************************
+Input: [CalculationMode = go]
+**********************************************************************
+
+Reading Coordinates from inp.xyz
+Input: [PseudopotentialSet = standard]
+
+****************************** Species *******************************
+Reading pseudopotential from file:
+      '/home/efefer/mysoftwares/octopus-6.0-serial/share/octopus/pseudopotentials/PSF/Na.psf'
+      Calculating atomic pseudo-eigenfunctions for species Na....
+Info: l =  0 component used as local potential.
+Info: l =  0 is maximum angular momentum considered.
+Number of orbitals: total =     16, bound =      4
+**********************************************************************
+
+
+***************************** Symmetries *****************************
+Symmetry elements : (sigma)
+Symmetry group    : Cs
+**********************************************************************
+
+Input: [SpinComponents = unpolarized]
+Input: [SmearingFunction = semiconducting]
+Input: [SymmetrizeDensity = no]
+
+******************************* States *******************************
+Total electronic charge  =        3.000
+Number of states         =        2
+States block-size        =        2
+**********************************************************************
+
+Input: [CurvMethod = curv_uniform]
+Input: [DerivativesStencil = stencil_star]
+
+************************** Parallelization ***************************
+Info: Octopus will run in *serial*
+**********************************************************************
+
+Info: Generating weights for finite-difference discretization of x-gradient
+Info: Generating weights for finite-difference discretization of y-gradient
+Info: Generating weights for finite-difference discretization of z-gradient
+Info: Generating weights for finite-difference discretization of Laplacian
+
+******************************** Grid ********************************
+Simulation Box:
+  Type = minimum
+  Radius  [A] =   9.000
+  Octopus will run in 3 dimension(s).
+  Octopus will treat the system as periodic in 0 dimension(s).
+Main mesh:
+  Spacing [A] = ( 0.300, 0.300, 0.300)    volume/point [A^3] =      0.02700
+  # inner mesh =     158977
+  # total mesh =     212922
+  Grid Cutoff [eV] =   417.811252    Grid Cutoff [Ry] =    30.708563
+**********************************************************************
+
+Info: states-block size = 3.2 MiB
+Input: [StatesOrthogonalization = gram_schmidt]
+
+****************************** Hartree *******************************
+The chosen Poisson solver is 'interpolating scaling functions'
+**********************************************************************
+
+
+**************************** Theory Level ****************************
+Input: [TheoryLevel = dft]
+
+Exchange-correlation:
+  Exchange
+    Slater exchange (LDA)
+    [1] P. A. M. Dirac, Math. Proc. Cambridge Philos. Soc. 26, 376 (1930)
+    [2] F. Bloch, Z. Phys. 57, 545 (1929)
+  Correlation
+    Perdew & Zunger (Modified) (LDA)
+    [1] J. P. Perdew and A. Zunger, Phys. Rev. B 23, 5048 (1981), modified to improve the matching between the low- and high-rs
+
+Input: [SICCorrection = sic_none]
+**********************************************************************
+
+Input: [FilterPotentials = filter_TS]
+Info: Pseudopotential for Na
+  Radii for localized parts:
+    local part     =  2.0 A
+    non-local part =  0.0 A
+    orbitals       = 10.5 A
+
+Input: [RelativisticCorrection = non_relativistic]
+Input: [AbsorbingBoundaries = not_absorbing]
+
+****************** Approximate memory requirements *******************
+Mesh
+  global  :       4.4 MiB
+  local   :       4.9 MiB
+  total   :       9.2 MiB
+
+States
+  real    :       3.2 MiB (par_kpoints + par_states + par_domains)
+  complex :       6.5 MiB (par_kpoints + par_states + par_domains)
+
+**********************************************************************
+
+Info: Generating external potential
+      done.
+Info: Octopus initialization completed.
+Info: Starting calculation mode.
+Info: Blocks of states
+      Block       1 contains       2 states:       1 -       2
+Input: [GOMethod = cg_bfgs]
+Input: [GOObjective = minimize_energy]
+Info: Ground-state restart information will be written to 'restart/gs'.
+Info: Ground-state restart information will be read from 'restart/gs'.
+
+             Info: Reading states. 2016/11/19 at 01:08:37
+
+Info: Finished reading information from 'restart/gs'.
+Input: [MixField = potential] (what to mix during SCF cycles)
+Input: [MixingScheme = broyden]
+
+**************************** Eigensolver *****************************
+Input: [Eigensolver = cg]
+Input: [Preconditioner = pre_filter]
+Input: [SubspaceDiagonalization = standard]
+**********************************************************************
+
+Input: [LCAOStart = lcao_full]
+Input: [LCAOScaleFactor = 1.000]
+Input: [LCAOMaximumOrbitalRadius = 10.58 A]
+Info: Single-precision storage for     2 extra orbitals will be allocated.
+Info: Unnormalized total charge =      2.999982
+Info: Renormalized total charge =      3.000000
+Info: Setting up Hamiltonian.
+Info: Performing initial LCAO calculation with      4 orbitals.
+Info: Getting Hamiltonian matrix elements.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+Eigenvalues [eV]
+ #st  Spin   Eigenvalue      Occupation
+   1   --    -4.432497       2.000000
+   2   --    -2.894732       1.000000
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.75552521E+01 : abs_dens 9.28E-01 : force  4.99E-01 : etime     1.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.60139173E+01 : abs_dens 2.27E-01 : force  1.26E-01 : etime     1.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.48929456E+01 : abs_dens 1.46E-01 : force  9.72E-02 : etime     1.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.47793494E+01 : abs_dens 2.77E-02 : force  2.32E-02 : etime     1.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    5 : etot -1.47550708E+01 : abs_dens 1.34E-02 : force  9.76E-03 : etime     1.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    6 : etot -1.47786272E+01 : abs_dens 8.19E-03 : force  4.13E-03 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    7 : etot -1.47798774E+01 : abs_dens 6.72E-04 : force  3.62E-04 : etime     1.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    8 : etot -1.47804758E+01 : abs_dens 8.71E-04 : force  4.99E-04 : etime     1.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    9 : etot -1.47811381E+01 : abs_dens 3.08E-04 : force  2.39E-04 : etime     0.9s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   10 : etot -1.47811213E+01 : abs_dens 5.34E-05 : force  4.04E-05 : etime     0.7s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   11 : etot -1.47811335E+01 : abs_dens 3.02E-05 : force  2.54E-05 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   12 : etot -1.47811200E+01 : abs_dens 2.37E-05 : force  1.11E-05 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   13 : etot -1.47811074E+01 : abs_dens 1.75E-06 : force  1.23E-06 : etime     0.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   14 : etot -1.47811062E+01 : abs_dens 6.02E-07 : force  2.59E-07 : etime     0.5s
+
+             Info: Writing states. 2016/11/19 at 01:08:50
+
+
+        Info: Finished writing states. 2016/11/19 at 01:08:50
+
+Info: SCF converged in   14 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.57346249E+01 : abs_dens 2.66E-01 : force  6.39E-01 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.57408903E+01 : abs_dens 5.95E-03 : force  2.54E-03 : etime     1.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.57408009E+01 : abs_dens 1.28E-04 : force  5.93E-05 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.57408012E+01 : abs_dens 3.26E-07 : force  3.03E-07 : etime     0.5s
+
+             Info: Writing states. 2016/11/19 at 01:08:55
+
+
+        Info: Finished writing states. 2016/11/19 at 01:08:55
+
+Info: SCF converged in    4 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.63013532E+01 : abs_dens 3.06E-01 : force  2.16E-01 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.59438336E+01 : abs_dens 2.01E-01 : force  1.47E-01 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.59560581E+01 : abs_dens 1.25E-02 : force  1.53E-02 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.59745606E+01 : abs_dens 7.08E-03 : force  5.86E-03 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    5 : etot -1.59701381E+01 : abs_dens 2.07E-03 : force  2.36E-03 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    6 : etot -1.59701183E+01 : abs_dens 7.32E-04 : force  5.34E-04 : etime     1.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    7 : etot -1.59702651E+01 : abs_dens 4.43E-04 : force  1.46E-04 : etime     1.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    8 : etot -1.59706439E+01 : abs_dens 1.00E-04 : force  1.02E-04 : etime     1.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    9 : etot -1.59707954E+01 : abs_dens 1.03E-04 : force  4.19E-05 : etime     0.8s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   10 : etot -1.59707799E+01 : abs_dens 4.67E-05 : force  4.13E-05 : etime     0.8s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   11 : etot -1.59707757E+01 : abs_dens 4.05E-07 : force  1.14E-06 : etime     0.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   12 : etot -1.59707692E+01 : abs_dens 7.34E-07 : force  1.80E-06 : etime     0.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   13 : etot -1.59707679E+01 : abs_dens 2.58E-07 : force  3.13E-07 : etime     0.5s
+
+             Info: Writing states. 2016/11/19 at 01:09:08
+
+
+        Info: Finished writing states. 2016/11/19 at 01:09:08
+
+Info: SCF converged in   13 iterations
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++ MINIMIZATION ITER #:    1 ++++++++++++++++++++++
+  Energy    =  -15.7408012195 eV
+  Max force =    2.1216596678 eV/A
+  Max dr    =    0.1677288183 A
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.60351572E+01 : abs_dens 6.75E-01 : force  1.18E+00 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.60559766E+01 : abs_dens 1.73E-02 : force  8.82E-03 : etime     1.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.60554099E+01 : abs_dens 5.81E-04 : force  4.19E-04 : etime     1.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.60554297E+01 : abs_dens 3.69E-05 : force  2.76E-05 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    5 : etot -1.62485343E+01 : abs_dens 2.44E-01 : force  2.33E-01 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    6 : etot -1.65282125E+01 : abs_dens 6.14E-02 : force  4.86E-02 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    7 : etot -1.67672127E+01 : abs_dens 4.25E-02 : force  2.25E-02 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    8 : etot -1.68336409E+01 : abs_dens 4.99E-02 : force  3.19E-02 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    9 : etot -1.68420170E+01 : abs_dens 2.38E-02 : force  1.64E-02 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   10 : etot -1.68525960E+01 : abs_dens 1.69E-02 : force  7.78E-03 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   11 : etot -1.68599465E+01 : abs_dens 7.42E-03 : force  5.27E-03 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   12 : etot -1.68617490E+01 : abs_dens 3.09E-03 : force  2.47E-03 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   13 : etot -1.68603317E+01 : abs_dens 7.97E-04 : force  5.65E-04 : etime     1.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   14 : etot -1.68594541E+01 : abs_dens 2.17E-04 : force  1.17E-04 : etime     1.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   15 : etot -1.68589526E+01 : abs_dens 1.93E-04 : force  1.51E-04 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   16 : etot -1.68588980E+01 : abs_dens 5.74E-05 : force  4.10E-05 : etime     0.9s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   17 : etot -1.68589643E+01 : abs_dens 2.46E-05 : force  2.90E-05 : etime     0.7s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   18 : etot -1.68589743E+01 : abs_dens 3.98E-06 : force  3.84E-06 : etime     0.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   19 : etot -1.68589915E+01 : abs_dens 1.74E-06 : force  1.37E-06 : etime     0.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   20 : etot -1.68589936E+01 : abs_dens 6.62E-07 : force  3.63E-07 : etime     0.5s
+
+             Info: Writing states. 2016/11/19 at 01:09:30
+
+
+        Info: Finished writing states. 2016/11/19 at 01:09:30
+
+Info: SCF converged in   20 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.68589931E+01 : abs_dens 7.61E-07 : force  3.01E-07 : etime     0.5s
+
+             Info: Writing states. 2016/11/19 at 01:09:32
+
+
+        Info: Finished writing states. 2016/11/19 at 01:09:32
+
+Info: SCF converged in    1 iterations
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++ MINIMIZATION ITER #:    2 ++++++++++++++++++++++
+  Energy    =  -16.8589935565 eV
+  Max force =    0.3100242222 eV/A
+  Max dr    =    0.3354576365 A
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.51526584E+01 : abs_dens 1.84E+00 : force  2.09E+00 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.51615403E+01 : abs_dens 6.45E-02 : force  2.25E-02 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.51551509E+01 : abs_dens 7.15E-03 : force  5.83E-03 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.51554370E+01 : abs_dens 4.42E-04 : force  2.57E-04 : etime     0.8s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    5 : etot -1.58132032E+01 : abs_dens 4.97E-01 : force  3.11E-01 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    6 : etot -1.65443130E+01 : abs_dens 4.43E-01 : force  3.71E-01 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    7 : etot -1.64880994E+01 : abs_dens 1.04E-01 : force  7.44E-02 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    8 : etot -1.66374958E+01 : abs_dens 5.92E-02 : force  4.30E-02 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    9 : etot -1.66557185E+01 : abs_dens 4.27E-02 : force  3.38E-02 : etime     1.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   10 : etot -1.66826334E+01 : abs_dens 9.17E-03 : force  6.63E-03 : etime     1.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   11 : etot -1.66873694E+01 : abs_dens 5.79E-03 : force  3.52E-03 : etime     1.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   12 : etot -1.66858321E+01 : abs_dens 8.42E-04 : force  5.35E-04 : etime     1.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   13 : etot -1.66845840E+01 : abs_dens 4.85E-04 : force  2.55E-04 : etime     1.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   14 : etot -1.66845078E+01 : abs_dens 2.55E-04 : force  9.76E-05 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   15 : etot -1.66849645E+01 : abs_dens 2.01E-04 : force  6.04E-05 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   16 : etot -1.66851030E+01 : abs_dens 3.51E-05 : force  1.81E-05 : etime     0.8s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   17 : etot -1.66850847E+01 : abs_dens 1.79E-05 : force  1.25E-05 : etime     0.8s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   18 : etot -1.66850927E+01 : abs_dens 3.53E-06 : force  2.64E-06 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   19 : etot -1.66851147E+01 : abs_dens 1.77E-05 : force  1.32E-05 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   20 : etot -1.66851116E+01 : abs_dens 1.63E-06 : force  9.63E-07 : etime     0.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   21 : etot -1.66851048E+01 : abs_dens 1.78E-06 : force  9.73E-07 : etime     0.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   22 : etot -1.66850846E+01 : abs_dens 1.68E-06 : force  1.06E-06 : etime     0.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   23 : etot -1.66850807E+01 : abs_dens 5.51E-07 : force  2.68E-07 : etime     0.5s
+
+             Info: Writing states. 2016/11/19 at 01:09:56
+
+
+        Info: Finished writing states. 2016/11/19 at 01:09:56
+
+Info: SCF converged in   23 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.92635681E+01 : abs_dens 1.19E+00 : force  1.62E+00 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.92096799E+01 : abs_dens 2.88E-02 : force  2.62E-02 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.92121511E+01 : abs_dens 1.83E-03 : force  1.39E-03 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.92120272E+01 : abs_dens 1.22E-04 : force  1.08E-04 : etime     0.9s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    5 : etot -1.80830096E+01 : abs_dens 3.63E-01 : force  3.70E-01 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    6 : etot -1.73549344E+01 : abs_dens 1.44E-01 : force  1.10E-01 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    7 : etot -1.69419245E+01 : abs_dens 1.02E-01 : force  7.64E-02 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    8 : etot -1.69007547E+01 : abs_dens 2.68E-02 : force  1.63E-02 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    9 : etot -1.69004901E+01 : abs_dens 1.31E-02 : force  1.22E-02 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   10 : etot -1.68950205E+01 : abs_dens 4.12E-03 : force  2.42E-03 : etime     1.7s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   11 : etot -1.68841469E+01 : abs_dens 7.46E-03 : force  3.35E-03 : etime     2.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   12 : etot -1.68842301E+01 : abs_dens 1.24E-03 : force  9.33E-04 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   13 : etot -1.68853940E+01 : abs_dens 1.08E-03 : force  5.05E-04 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   14 : etot -1.68857777E+01 : abs_dens 2.47E-04 : force  1.72E-04 : etime     1.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   15 : etot -1.68857751E+01 : abs_dens 5.49E-05 : force  4.70E-05 : etime     0.9s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   16 : etot -1.68857330E+01 : abs_dens 4.46E-06 : force  5.40E-06 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   17 : etot -1.68857009E+01 : abs_dens 1.23E-05 : force  1.08E-05 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   18 : etot -1.68857049E+01 : abs_dens 1.53E-06 : force  8.49E-07 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   19 : etot -1.68857081E+01 : abs_dens 6.37E-07 : force  8.30E-07 : etime     0.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   20 : etot -1.68857112E+01 : abs_dens 3.06E-07 : force  2.06E-07 : etime     0.5s
+
+             Info: Writing states. 2016/11/19 at 01:10:19
+
+
+        Info: Finished writing states. 2016/11/19 at 01:10:19
+
+Info: SCF converged in   20 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.68857136E+01 : abs_dens 5.52E-07 : force  3.44E-07 : etime     0.6s
+
+             Info: Writing states. 2016/11/19 at 01:10:20
+
+
+        Info: Finished writing states. 2016/11/19 at 01:10:20
+
+Info: SCF converged in    1 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.72066462E+01 : abs_dens 1.76E-01 : force  2.88E-01 : etime     1.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.72031362E+01 : abs_dens 3.74E-03 : force  2.53E-03 : etime     1.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.72034610E+01 : abs_dens 2.26E-04 : force  1.90E-04 : etime     0.9s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.72034504E+01 : abs_dens 1.21E-05 : force  1.01E-05 : etime     0.7s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    5 : etot -1.70499654E+01 : abs_dens 5.99E-02 : force  5.81E-02 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    6 : etot -1.69597506E+01 : abs_dens 2.14E-02 : force  1.75E-02 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    7 : etot -1.69077507E+01 : abs_dens 1.31E-02 : force  8.34E-03 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    8 : etot -1.69025084E+01 : abs_dens 4.10E-03 : force  3.25E-03 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    9 : etot -1.69022270E+01 : abs_dens 1.04E-03 : force  1.33E-03 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   10 : etot -1.69022603E+01 : abs_dens 1.19E-03 : force  7.85E-04 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   11 : etot -1.69015775E+01 : abs_dens 5.43E-04 : force  3.88E-04 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   12 : etot -1.69009689E+01 : abs_dens 2.05E-04 : force  2.07E-04 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   13 : etot -1.69007521E+01 : abs_dens 2.45E-04 : force  1.32E-04 : etime     1.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   14 : etot -1.69007805E+01 : abs_dens 2.23E-05 : force  1.48E-05 : etime     0.9s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   15 : etot -1.69008156E+01 : abs_dens 4.32E-05 : force  2.98E-05 : etime     1.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   16 : etot -1.69008084E+01 : abs_dens 1.18E-06 : force  1.53E-06 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   17 : etot -1.69007957E+01 : abs_dens 1.64E-06 : force  2.87E-06 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   18 : etot -1.69007896E+01 : abs_dens 5.85E-07 : force  2.93E-07 : etime     0.6s
+
+             Info: Writing states. 2016/11/19 at 01:10:40
+
+
+        Info: Finished writing states. 2016/11/19 at 01:10:40
+
+Info: SCF converged in   18 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.69007855E+01 : abs_dens 7.77E-07 : force  4.85E-07 : etime     0.6s
+
+             Info: Writing states. 2016/11/19 at 01:10:41
+
+
+        Info: Finished writing states. 2016/11/19 at 01:10:41
+
+Info: SCF converged in    1 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.70631055E+01 : abs_dens 9.18E-02 : force  1.53E-01 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.70613287E+01 : abs_dens 2.00E-03 : force  1.31E-03 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.70614795E+01 : abs_dens 1.46E-04 : force  1.05E-04 : etime     0.9s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.70614791E+01 : abs_dens 3.99E-07 : force  1.89E-07 : etime     0.5s
+
+             Info: Writing states. 2016/11/19 at 01:10:46
+
+
+        Info: Finished writing states. 2016/11/19 at 01:10:46
+
+Info: SCF converged in    4 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.67675183E+01 : abs_dens 1.37E-01 : force  1.28E-01 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.69371060E+01 : abs_dens 9.71E-02 : force  8.86E-02 : etime     1.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.69050442E+01 : abs_dens 9.54E-03 : force  5.91E-03 : etime     2.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.69050501E+01 : abs_dens 8.06E-04 : force  5.83E-04 : etime     1.7s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    5 : etot -1.69046423E+01 : abs_dens 9.58E-04 : force  5.60E-04 : etime     1.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    6 : etot -1.69045997E+01 : abs_dens 1.52E-04 : force  1.57E-04 : etime     1.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    7 : etot -1.69044838E+01 : abs_dens 1.58E-04 : force  8.23E-05 : etime     1.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    8 : etot -1.69044137E+01 : abs_dens 2.93E-05 : force  2.39E-05 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    9 : etot -1.69043935E+01 : abs_dens 7.86E-07 : force  1.20E-06 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   10 : etot -1.69043642E+01 : abs_dens 1.27E-05 : force  8.02E-06 : etime     0.8s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   11 : etot -1.69043657E+01 : abs_dens 1.17E-06 : force  1.43E-06 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   12 : etot -1.69043720E+01 : abs_dens 1.69E-06 : force  3.42E-06 : etime     0.7s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   13 : etot -1.69043760E+01 : abs_dens 4.04E-07 : force  2.52E-07 : etime     0.6s
+
+             Info: Writing states. 2016/11/19 at 01:11:03
+
+
+        Info: Finished writing states. 2016/11/19 at 01:11:03
+
+Info: SCF converged in   13 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.71784006E+01 : abs_dens 1.55E-01 : force  2.63E-01 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.71754812E+01 : abs_dens 3.20E-03 : force  2.14E-03 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.71757690E+01 : abs_dens 1.78E-04 : force  1.43E-04 : etime     0.9s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.71757646E+01 : abs_dens 6.37E-06 : force  4.88E-06 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    5 : etot -1.70595208E+01 : abs_dens 4.48E-02 : force  4.55E-02 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    6 : etot -1.69611614E+01 : abs_dens 2.64E-02 : force  2.38E-02 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    7 : etot -1.69054714E+01 : abs_dens 1.11E-02 : force  7.94E-03 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    8 : etot -1.69018598E+01 : abs_dens 3.47E-03 : force  1.91E-03 : etime     1.9s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    9 : etot -1.69018183E+01 : abs_dens 1.75E-03 : force  1.74E-03 : etime     2.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   10 : etot -1.69015526E+01 : abs_dens 4.53E-04 : force  2.27E-04 : etime     2.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   11 : etot -1.69011398E+01 : abs_dens 5.73E-04 : force  3.26E-04 : etime     2.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   12 : etot -1.69010642E+01 : abs_dens 1.17E-04 : force  5.22E-05 : etime     1.8s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   13 : etot -1.69009594E+01 : abs_dens 2.17E-04 : force  1.14E-04 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   14 : etot -1.69009471E+01 : abs_dens 5.82E-06 : force  3.75E-06 : etime     0.8s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   15 : etot -1.69009286E+01 : abs_dens 1.64E-05 : force  8.71E-06 : etime     0.7s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   16 : etot -1.69009260E+01 : abs_dens 2.59E-06 : force  3.24E-06 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   17 : etot -1.69009217E+01 : abs_dens 2.79E-06 : force  3.76E-06 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   18 : etot -1.69009221E+01 : abs_dens 1.12E-06 : force  8.11E-07 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   19 : etot -1.69009223E+01 : abs_dens 4.96E-07 : force  8.37E-07 : etime     0.7s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   20 : etot -1.69009230E+01 : abs_dens 3.17E-07 : force  3.57E-07 : etime     0.6s
+
+             Info: Writing states. 2016/11/19 at 01:11:28
+
+
+        Info: Finished writing states. 2016/11/19 at 01:11:28
+
+Info: SCF converged in   20 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.67016931E+01 : abs_dens 1.24E-01 : force  2.10E-01 : etime     2.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.67036382E+01 : abs_dens 2.69E-03 : force  1.75E-03 : etime     2.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.67034015E+01 : abs_dens 1.55E-04 : force  1.29E-04 : etime     1.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.67034017E+01 : abs_dens 4.37E-07 : force  1.55E-07 : etime     0.5s
+
+             Info: Writing states. 2016/11/19 at 01:11:35
+
+
+        Info: Finished writing states. 2016/11/19 at 01:11:35
+
+Info: SCF converged in    4 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.69834227E+01 : abs_dens 1.49E-01 : force  6.99E-02 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.67728129E+01 : abs_dens 1.25E-01 : force  1.13E-01 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.71589336E+01 : abs_dens 1.07E-01 : force  9.84E-02 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.67606226E+01 : abs_dens 1.18E-01 : force  1.13E-01 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    5 : etot -1.69019042E+01 : abs_dens 4.23E-02 : force  3.94E-02 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    6 : etot -1.69034866E+01 : abs_dens 1.46E-03 : force  8.60E-04 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    7 : etot -1.69032031E+01 : abs_dens 3.75E-04 : force  2.90E-04 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    8 : etot -1.69033069E+01 : abs_dens 1.86E-04 : force  2.72E-04 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    9 : etot -1.69035144E+01 : abs_dens 9.13E-05 : force  9.46E-05 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   10 : etot -1.69034711E+01 : abs_dens 1.97E-05 : force  1.04E-05 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   11 : etot -1.69034556E+01 : abs_dens 1.25E-06 : force  1.30E-06 : etime     0.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   12 : etot -1.69034337E+01 : abs_dens 5.62E-06 : force  6.26E-06 : etime     0.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   13 : etot -1.69034325E+01 : abs_dens 3.32E-07 : force  1.42E-07 : etime     0.4s
+
+             Info: Writing states. 2016/11/19 at 01:11:48
+
+
+        Info: Finished writing states. 2016/11/19 at 01:11:48
+
+Info: SCF converged in   13 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.69407654E+01 : abs_dens 2.16E-02 : force  3.62E-02 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.69404033E+01 : abs_dens 4.72E-04 : force  2.99E-04 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.69404405E+01 : abs_dens 2.70E-05 : force  2.13E-05 : etime     0.7s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.69404400E+01 : abs_dens 3.95E-07 : force  2.39E-07 : etime     0.5s
+
+             Info: Writing states. 2016/11/19 at 01:11:52
+
+
+        Info: Finished writing states. 2016/11/19 at 01:11:52
+
+Info: SCF converged in    4 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.69145234E+01 : abs_dens 2.18E-02 : force  2.87E-02 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.69417272E+01 : abs_dens 1.80E-02 : force  1.62E-02 : etime     1.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.70897100E+01 : abs_dens 4.29E-02 : force  4.05E-02 : etime     1.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.69748731E+01 : abs_dens 3.17E-02 : force  2.95E-02 : etime     2.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    5 : etot -1.69048524E+01 : abs_dens 2.02E-02 : force  1.88E-02 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    6 : etot -1.69047772E+01 : abs_dens 4.90E-04 : force  2.18E-04 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    7 : etot -1.69046177E+01 : abs_dens 9.35E-05 : force  6.12E-05 : etime     1.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    8 : etot -1.69046557E+01 : abs_dens 8.86E-05 : force  1.18E-04 : etime     1.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    9 : etot -1.69046369E+01 : abs_dens 1.39E-05 : force  1.80E-05 : etime     0.9s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   10 : etot -1.69046134E+01 : abs_dens 2.33E-06 : force  1.34E-06 : etime     0.8s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   11 : etot -1.69045631E+01 : abs_dens 2.01E-05 : force  1.80E-05 : etime     1.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   12 : etot -1.69045653E+01 : abs_dens 2.37E-07 : force  3.18E-07 : etime     0.6s
+
+             Info: Writing states. 2016/11/19 at 01:12:08
+
+
+        Info: Finished writing states. 2016/11/19 at 01:12:08
+
+Info: SCF converged in   12 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.68809061E+01 : abs_dens 1.39E-02 : force  2.35E-02 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.68810562E+01 : abs_dens 2.96E-04 : force  1.76E-04 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.68810421E+01 : abs_dens 1.21E-05 : force  7.89E-06 : etime     0.7s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.68810393E+01 : abs_dens 4.59E-07 : force  3.01E-07 : etime     0.6s
+
+             Info: Writing states. 2016/11/19 at 01:12:13
+
+
+        Info: Finished writing states. 2016/11/19 at 01:12:13
+
+Info: SCF converged in    4 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.69264120E+01 : abs_dens 2.11E-02 : force  1.96E-02 : etime     1.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.69007572E+01 : abs_dens 1.49E-02 : force  1.36E-02 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.69026279E+01 : abs_dens 1.45E-03 : force  8.10E-04 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.69042893E+01 : abs_dens 3.65E-04 : force  2.43E-04 : etime     1.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    5 : etot -1.69043433E+01 : abs_dens 4.31E-05 : force  3.40E-05 : etime     0.9s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    6 : etot -1.69043749E+01 : abs_dens 5.10E-05 : force  7.09E-05 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    7 : etot -1.69043614E+01 : abs_dens 1.36E-05 : force  1.32E-05 : etime     0.7s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    8 : etot -1.69043584E+01 : abs_dens 2.36E-06 : force  3.33E-06 : etime     0.7s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    9 : etot -1.69043590E+01 : abs_dens 7.27E-07 : force  3.93E-07 : etime     0.5s
+
+             Info: Writing states. 2016/11/19 at 01:12:23
+
+
+        Info: Finished writing states. 2016/11/19 at 01:12:23
+
+Info: SCF converged in    9 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.69043586E+01 : abs_dens 8.21E-07 : force  6.33E-07 : etime     0.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.69043586E+01 : abs_dens 4.70E-07 : force  2.52E-07 : etime     0.5s
+
+             Info: Writing states. 2016/11/19 at 01:12:25
+
+
+        Info: Finished writing states. 2016/11/19 at 01:12:25
+
+Info: SCF converged in    2 iterations
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++ MINIMIZATION ITER #:    3 ++++++++++++++++++++++
+  Energy    =  -17.0614790856 eV
+  Max force =    0.0351611444 eV/A
+  Max dr    =    0.1529667500 A
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.76689179E+01 : abs_dens 3.92E-01 : force  6.24E-01 : etime     1.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.76564371E+01 : abs_dens 8.46E-03 : force  6.67E-03 : etime     1.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.76572314E+01 : abs_dens 4.36E-04 : force  2.92E-04 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.76572080E+01 : abs_dens 3.34E-05 : force  2.32E-05 : etime     0.9s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    5 : etot -1.73314445E+01 : abs_dens 1.15E-01 : force  1.14E-01 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    6 : etot -1.70885535E+01 : abs_dens 4.68E-02 : force  3.06E-02 : etime     1.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    7 : etot -1.69006258E+01 : abs_dens 3.39E-02 : force  2.54E-02 : etime     1.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    8 : etot -1.68717592E+01 : abs_dens 1.62E-02 : force  1.25E-02 : etime     2.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    9 : etot -1.68686467E+01 : abs_dens 3.30E-03 : force  2.95E-03 : etime     1.7s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   10 : etot -1.68608462E+01 : abs_dens 3.30E-03 : force  2.04E-03 : etime     1.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   11 : etot -1.68596135E+01 : abs_dens 1.02E-03 : force  7.71E-04 : etime     1.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   12 : etot -1.68600277E+01 : abs_dens 5.18E-04 : force  3.80E-04 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   13 : etot -1.68602687E+01 : abs_dens 3.66E-04 : force  2.73E-04 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   14 : etot -1.68601957E+01 : abs_dens 1.21E-04 : force  8.14E-05 : etime     1.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   15 : etot -1.68601736E+01 : abs_dens 8.26E-06 : force  4.12E-06 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   16 : etot -1.68601727E+01 : abs_dens 2.35E-06 : force  5.49E-06 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   17 : etot -1.68601750E+01 : abs_dens 5.18E-07 : force  4.32E-07 : etime     0.5s
+
+             Info: Writing states. 2016/11/19 at 01:12:46
+
+
+        Info: Finished writing states. 2016/11/19 at 01:12:46
+
+Info: SCF converged in   17 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.62342277E+01 : abs_dens 4.02E-01 : force  6.62E-01 : etime     1.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.62453010E+01 : abs_dens 9.80E-03 : force  6.84E-03 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.62445477E+01 : abs_dens 6.49E-04 : force  5.01E-04 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.62445814E+01 : abs_dens 3.72E-05 : force  3.02E-05 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    5 : etot -1.64995377E+01 : abs_dens 1.39E-01 : force  1.36E-01 : etime     1.8s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    6 : etot -1.67004862E+01 : abs_dens 4.76E-02 : force  4.10E-02 : etime     1.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    7 : etot -1.68565213E+01 : abs_dens 3.04E-02 : force  2.31E-02 : etime     1.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    8 : etot -1.68912873E+01 : abs_dens 1.98E-02 : force  1.40E-02 : etime     1.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    9 : etot -1.68949870E+01 : abs_dens 5.51E-03 : force  3.38E-03 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   10 : etot -1.68997212E+01 : abs_dens 5.22E-03 : force  3.89E-03 : etime     1.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   11 : etot -1.69037670E+01 : abs_dens 1.81E-03 : force  1.15E-03 : etime     1.2s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   12 : etot -1.69058741E+01 : abs_dens 1.08E-03 : force  8.23E-04 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   13 : etot -1.69050833E+01 : abs_dens 2.67E-04 : force  2.46E-04 : etime     1.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   14 : etot -1.69047153E+01 : abs_dens 7.35E-05 : force  5.37E-05 : etime     0.8s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   15 : etot -1.69045014E+01 : abs_dens 5.71E-05 : force  5.89E-05 : etime     0.8s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   16 : etot -1.69045167E+01 : abs_dens 8.34E-07 : force  4.97E-07 : etime     0.5s
+
+             Info: Writing states. 2016/11/19 at 01:13:07
+
+
+        Info: Finished writing states. 2016/11/19 at 01:13:07
+
+Info: SCF converged in   16 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.68878134E+01 : abs_dens 9.14E-03 : force  1.49E-02 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.68879206E+01 : abs_dens 2.00E-04 : force  1.20E-04 : etime     1.1s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.68878985E+01 : abs_dens 8.93E-06 : force  6.60E-06 : etime     0.7s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.68878792E+01 : abs_dens 3.02E-06 : force  2.15E-06 : etime     0.7s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    5 : etot -1.69010693E+01 : abs_dens 3.35E-03 : force  3.11E-03 : etime     1.9s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    6 : etot -1.68995701E+01 : abs_dens 2.08E-03 : force  1.59E-03 : etime     1.8s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    7 : etot -1.69019329E+01 : abs_dens 4.89E-04 : force  4.22E-04 : etime     1.4s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    8 : etot -1.69046583E+01 : abs_dens 1.00E-03 : force  5.27E-04 : etime     1.3s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    9 : etot -1.69043920E+01 : abs_dens 1.18E-04 : force  8.95E-05 : etime     1.0s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   10 : etot -1.69043159E+01 : abs_dens 7.37E-05 : force  4.98E-05 : etime     0.9s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   11 : etot -1.69044034E+01 : abs_dens 5.65E-05 : force  3.54E-05 : etime     0.8s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   12 : etot -1.69044002E+01 : abs_dens 6.99E-06 : force  6.04E-06 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   13 : etot -1.69043944E+01 : abs_dens 2.64E-06 : force  2.68E-06 : etime     0.7s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   14 : etot -1.69043858E+01 : abs_dens 3.02E-06 : force  2.33E-06 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   15 : etot -1.69043826E+01 : abs_dens 1.04E-06 : force  1.16E-06 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter   16 : etot -1.69043793E+01 : abs_dens 2.90E-07 : force  1.20E-07 : etime     0.5s
+
+             Info: Writing states. 2016/11/19 at 01:13:24
+
+
+        Info: Finished writing states. 2016/11/19 at 01:13:24
+
+Info: SCF converged in   16 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.69043772E+01 : abs_dens 2.51E-06 : force  5.04E-06 : etime     0.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.69043771E+01 : abs_dens 3.17E-07 : force  1.34E-07 : etime     0.5s
+
+             Info: Writing states. 2016/11/19 at 01:13:25
+
+
+        Info: Finished writing states. 2016/11/19 at 01:13:26
+
+Info: SCF converged in    2 iterations
+
+Info: Starting SCF iteration.
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    1 : etot -1.69043774E+01 : abs_dens 3.61E-06 : force  2.55E-06 : etime     0.5s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    2 : etot -1.69043765E+01 : abs_dens 3.02E-06 : force  2.52E-06 : etime     0.6s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    3 : etot -1.69043760E+01 : abs_dens 8.77E-07 : force  5.38E-07 : etime     0.7s
+ETA: .......1......2.......3......4......5.......6......7.......8......9......0
+
+iter    4 : etot -1.69043754E+01 : abs_dens 1.70E-07 : force  1.19E-07 : etime     0.6s
+
+             Info: Writing states. 2016/11/19 at 01:13:29
+
+
+        Info: Finished writing states. 2016/11/19 at 01:13:29
+
+Info: SCF converged in    4 iterations
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++ MINIMIZATION ITER #:    4 ++++++++++++++++++++++
+  Energy    =  -17.0614790856 eV
+  Max force =    0.0351597152 eV/A
+  Max dr    =    0.0000000000 A
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
